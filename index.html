@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Project Using Figma</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+        width: 20px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #11D43C; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #b30000; 
+        }
+        header{
+            position: fixed;
+            width:100%;
+            z-index: 10;
+            height: 90px;
+            left: 0px;
+            top: 0px;
+            background: #11D43C;
+        }
+        .brand
+        {
+            position: absolute;
+            width: 270px;
+            height: 30.15px;
+            left: 50px;
+            top: 31px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 25.8403px;
+            line-height: 30px;
+            /* identical to box height */
+
+            text-transform: uppercase;
+
+            color: #000000;
+        }
+        .nav-link{
+            height: inherit;
+            position: absolute;
+            top:0;
+            right:100px;
+            line-height: 90px;
+        }
+        .nav-link li
+        {
+            display: inline-block;
+            margin-left: 100px;
+            height: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+            height: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .active
+        {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 5px;
+        }
+        #sections{
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space:nowrap;
+        }
+        section{
+            width: 100%;
+            height: 98vh;
+            position: relative;
+            display: inline-block;
+            transition: 1s;
+        }
+        #home h1{
+            position: absolute;
+            width: 700px;
+            height: 60px;
+            left: 134px;
+            top: 255px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 51.4286px;
+            line-height: 60px;
+            text-transform: uppercase;
+
+            color: #000000;
+
+        }
+        #home h3{
+            position: absolute;
+            max-width: 471px;
+            height: 213px;
+            left: 136px;
+            top: 360px;
+            word-wrap: break-word;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 33px;
+            display: flex;
+            align-items: center;
+            text-align: justify;
+
+            color: #333333;
+
+        }
+        #home button{
+            position: absolute;
+            width: 276px;
+            height: 89px;
+            left: 147px;
+            top: 694px;
+            border: none;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 5px;
+            color: #FFFFFF;
+            cursor: pointer;
+            background: #11D53C;
+        }
+        .home-model{
+            position: absolute;
+            width: 364px;
+            height: 655px;
+            right: 300px;
+            top: 150px;
+        }
+        /*skill section*/
+        #skills{
+            position: relative;
+        }
+        #skills h1{
+            position: absolute;
+            width: 336px;
+            height: 119px;
+            left: 626px;
+            top: 137px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 102px;
+            line-height: 120px;
+            text-transform: uppercase;
+
+            color: #000000;
+        }
+        #skills img
+        {
+            position: absolute;
+            width: 580px;
+            height: 553px;
+            left: 74px;
+            top: 202px;
+
+        }
+        #skills .wrapper{
+            position: absolute;
+            width: 647px;
+            height: 347px;
+            left: 692px;
+            top: 416px; 
+            display: grid;
+            grid-template-columns: repeat(3,1fr);  
+            grid-gap: 1em;       
+            grid-auto-rows: minmax(150px,auto);
+        }
+        .wrapper > div{
+            background-color: lightgrey;
+            text-align: center;
+            line-height: 150px;
+            color: white;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            border-radius: 5px;
+        }
+        .wrapper > div:nth-child(1)
+        {
+            background: #11D43C;
+        }
+        .wrapper > div:nth-child(2){background: #E2371F;}
+        .wrapper > div:nth-child(3){background:#11C8D4;}
+        .wrapper > div:nth-child(4){background:#3E5C0C;}
+        .wrapper > div:nth-child(5){background:#250E68;}
+        .wrapper > div:nth-child(6){background:#5EBE24;}
+
+        /*follow section*/
+        #follow h1{
+            position: absolute;
+            width: 697px;
+            height: 120px;
+            left: 150px;
+            top: 180px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 102px;
+            line-height: 120px;
+            /* identical to box height */
+
+            text-transform: uppercase;
+
+            color: #000000;            
+        }
+        #follow .img1{
+            position: absolute;
+            width: 559px;
+            height: 128px;
+            left: 93px;
+            top: 474px;
+        }
+        #follow .img2{
+            position: absolute;
+            width: 171px;
+            height: 155px;
+            left: 769px;
+            top: 467px;
+        }
+        #follow .img3{
+            position: absolute;
+            width: 178px;
+            height: 155px;
+            left: 1006px;
+            top: 467px;
+        }
+        #follow .img4{
+            position: absolute;
+            width: 191px;
+            height: 173px;
+            left: 889px;
+            top: 662px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="brand">Mern Stack</h2>
+        <div class="nav-link">
+            <li><a onclick="first()"  class="active links">Home</a></li>
+            <li><a onclick="second()" class="links">Skills</a></li>
+            <li><a onclick="third()" class="links">Follow</a></li>
+        </div>
+    </header>
+    <div id="sections">
+    <section id="home">
+            <h1>
+                MERN STACK DEVELOPER
+            </h1>
+            <h3>
+                MERN stack is a combination of MongoDb, Express,<br> React Js and Node Js.
+                This is the currently trending technology<br>  stack to build websites.MongoDb is a NoSql database
+                , express<br>  is for routing, react js handles the front end part and node js<br>  is the runtime 
+                environment for javascript.
+            </h3>
+            <button>Learn Mearn Stack</button>
+            <img src="boy-4731631_1920.png" class="home-model"/>
+    </section>
+    <section id="skills">
+        <h1>SKILLS</h1>
+        <img src="typing-3836859_1920.png"/>
+        <div class="wrapper">
+            <div>HTML5</div>
+            <div>CSS3</div>
+            <div>NODE</div>
+            <div>REACT</div>
+            <div>EXPRESS</div>
+            <div>MONGODB</div>
+        </div>
+    </section>
+    <section id="follow">
+        <h1>SOCIAL MEDIA</h1>
+        <img src="arrow-1538694_1920.png" class="img1">
+        <img src="facebook-2429746__340.webp" class="img2">
+        <img src="instagram-2433265__340.webp" class="img3">
+        <img src="twitter-2430933__340.webp" class="img4">
+    </section>
+    </div>
+    <script>
+        var s1 = document.getElementById("home");
+        var links = document.getElementsByClassName("links");
+        function first(){
+            s1.style.marginLeft = 0 + "%";
+            links[0].classList.add('active');
+            links[1].classList.remove("active");
+            links[2].classList.remove("active");
+        }
+        function second(){
+            s1.style.marginLeft = -100 + "%";
+            links[1].classList.add('active');
+            links[0].classList.remove("active");
+            links[2].classList.remove("active");
+        }
+        function third(){
+            s1.style.marginLeft = -200 + "%";
+            links[2].classList.add('active');
+            links[0].classList.remove("active");
+            links[1].classList.remove("active");
+        }
+    </script>
+</body>
+</html>
